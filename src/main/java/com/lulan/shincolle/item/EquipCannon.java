@@ -22,7 +22,7 @@ import net.minecraft.util.NonNullList;
  *    13: 8-inch Long Range Twin Cannon
  *    14: 15-inch Quadruple Cannon
  *    15: 12-inch Triple Cannon
- *    
+ *    16: 46cm Triple Cannon
  */
 public class EquipCannon extends BasicEquip
 {
@@ -59,6 +59,7 @@ public class EquipCannon extends BasicEquip
 		list.add(new ItemStack(this, 1, 9));
 		list.add(new ItemStack(this, 1, 15));
 		list.add(new ItemStack(this, 1, 10));
+		list.add(new ItemStack(this, 1, 16));
 		//Qu
 		list.add(new ItemStack(this, 1, 14));
 	}
@@ -68,7 +69,7 @@ public class EquipCannon extends BasicEquip
 	@Override
 	public int getTypes()
 	{
-		return 16;
+		return 17;
 	}
 	
 	@Override
@@ -100,9 +101,10 @@ public class EquipCannon extends BasicEquip
 		case 11:
 		case 14:
 		case 15:
+		case 16:
 			return ID.EquipType.CANNON_TR;
 		default:
-			return 0;
+			return ID.EquipType.CANNON_SI;
 		}
 	}
 	

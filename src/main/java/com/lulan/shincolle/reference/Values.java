@@ -647,6 +647,7 @@ public class Values
 		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_TRI_16 * 100,       new float[]{0F,  15F, 0F,  0F,  0F,  0F,   0.4F, -0.32F, 2F,   0F,    0.08F, 0.08F, 0F,    0F,  0F,  0F,   0F,   0F,   0.3F, 0F,   0F});
 		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_FG_15 * 100,        new float[]{140F,6F,  0F,  0F,  0F,  0.06F,0.2F, -0.32F, 1.5F, 0F,    0.04F, 0.04F, 0F,    0F,  0F,  0F,   0F,   0F,   0.3F, 0F,   0F});
 		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_QUAD_15 * 100,      new float[]{0F,  18F, 0F,  0F,  0F,  0F,   0.6F, -0.4F,  2F,   0F,    0.1F,  0.1F,  0F,    0F,  0F,  0F,   0F,   0F,   0.4F, 0F,   0F});
+		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_TRI_1811 * 100,     new float[]{0F,  30F, 0F,  0F,  0F,  0F,   0.1F, -0.4F, 2F,   0F,       0F,  0.2F,  0F,    0F,  0F,  0F,   0F,   0F,   0.5F, 0F,   0F});
 		//machine gun
 		put((int)ID.EquipType.GUN_LO + (int)ID.EquipSubID.GUN_HA_3 * 100,          		new float[]{0F,  1F,  0F,  0F,  0F,  0F,   0F,   -0.02F, 0F,   0F,    0F,    0F,    0F,    8F,  0F,  0F,   0F,   0F,   0F,   0F,   0F});
 		put((int)ID.EquipType.GUN_LO + (int)ID.EquipSubID.GUN_HA_5 * 100,          		new float[]{0F,  2F,  0F,  0F,  0F,  0F,   0F,   -0.02F, 0F,   0F,    0F,    0F,    0F,    12F, 0F,  0F,   0F,   0F,   0F,   0F,   0F});
@@ -772,6 +773,7 @@ public class Values
 		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_TRI_16 * 100,       new int[]{1,   ID.EquipType.CANNON_TR,      3500, 4400, 2,  1});
 		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_FG_15 * 100,        new int[]{1,   ID.EquipType.CANNON_TR,      2500, 4400, 2,  1});
 		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_QUAD_15 * 100,      new int[]{1,   ID.EquipType.CANNON_TR,      4000, 4400, 2,  1});
+		put((int)ID.EquipType.CANNON_TR + (int)ID.EquipSubID.CANNON_TRI_1811 * 100,      new int[]{1,   ID.EquipType.CANNON_TR,      4000, 4400, 2,  1});
 		//machine gun
 		put((int)ID.EquipType.GUN_LO + (int)ID.EquipSubID.GUN_HA_3 * 100,          		new int[]{2,   ID.EquipType.GUN_LO,         1000, 100,  2,  1});
 		put((int)ID.EquipType.GUN_LO + (int)ID.EquipSubID.GUN_HA_5 * 100,          		new int[]{2,   ID.EquipType.GUN_LO,         2000, 100,  2,  1});

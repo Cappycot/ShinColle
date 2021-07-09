@@ -46,13 +46,13 @@ public class InteractHelper
 		{
 			if (!player.capabilities.isCreativeMode)
 			{
-                stack.shrink(1);
-                
-                if (stack.getCount() <= 0)
-                {	//物品用完時要設定為null清空該slot
-                	player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
-                }
-            }
+				stack.shrink(1);
+				
+				if (stack.getCount() <= 0)
+				{	//物品用完時要設定為null清空該slot
+					player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
+				}
+			}
 			
 			//set happy emotion
 			ship.setStateEmotion(ID.S.Emotion, ID.Emotion.XD, true);
@@ -67,8 +67,8 @@ public class InteractHelper
 		
 		return false;
 	}
-    
-    /** pointer interact method */
+
+	/** pointer interact method */
 	public static boolean interactPointer(BasicEntityShip ship, EntityPlayer player, ItemStack stack)
 	{
 		//set ai target
@@ -96,69 +96,69 @@ public class InteractHelper
 		
 		return true;
 	}
-    
-    /** bucket interact method */
+		
+	/** bucket interact method */
 	public static boolean interactBucket(BasicEntityShip ship, EntityPlayer player, ItemStack stack)
 	{
 		//hp不到max hp時可以使用bucket
 		if (ship.getHealth() < ship.getMaxHealth())
 		{
 			if (!player.capabilities.isCreativeMode)
-			{  //item-1 in non-creative mode
+			{	//item-1 in non-creative mode
 				stack.shrink(1);
 				
 				if (stack.getCount() <= 0)
-	            {  
-	            	player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
-	            }
-            }
+				{	
+					player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
+				}
+			}
 
-            if (ship instanceof BasicEntityShipSmall)
-            {
-            	ship.heal(ship.getMaxHealth() * 0.1F + 5F);	//1 bucket = 10% hp for small ship
-            }
-            else
-            {
-            	ship.heal(ship.getMaxHealth() * 0.05F + 10F);	//1 bucket = 5% hp for large ship
-            }
-            
-            //airplane++
-            if (ship instanceof BasicEntityShipCV)
-            {
-            	BasicEntityShipCV ship2 = (BasicEntityShipCV) ship;
-            	ship2.setNumAircraftLight(ship2.getNumAircraftLight() + 1);
-            	ship2.setNumAircraftHeavy(ship2.getNumAircraftHeavy() + 1);
-            }
-            
-            return true;
-        }
+			if (ship instanceof BasicEntityShipSmall)
+			{
+				ship.heal(ship.getMaxHealth() * 0.1F + 5F);	//1 bucket = 10% hp for small ship
+			}
+			else
+			{
+				ship.heal(ship.getMaxHealth() * 0.05F + 10F);	//1 bucket = 5% hp for large ship
+			}
+			
+			//airplane++
+			if (ship instanceof BasicEntityShipCV)
+			{
+				BasicEntityShipCV ship2 = (BasicEntityShipCV) ship;
+				ship2.setNumAircraftLight(ship2.getNumAircraftLight() + 1);
+				ship2.setNumAircraftHeavy(ship2.getNumAircraftHeavy() + 1);
+			}
+			
+			return true;
+		}
 		
 		return false;
 	}
-    
-    /** wedding ring interact method */
+	
+	/** wedding ring interact method */
 	public static boolean interactWeddingRing(BasicEntityShip ship, EntityPlayer player, ItemStack stack)
 	{
 		//stack-1 in non-creative mode
 		if (!player.capabilities.isCreativeMode)
 		{
-            stack.shrink(1);
-        }
+			stack.shrink(1);
+		}
 
 		//set marriage flag
-        ship.setStateFlag(ID.F.IsMarried, true);
-        
-        //player marriage num +1
+		ship.setStateFlag(ID.F.IsMarried, true);
+		
+		//player marriage num +1
 		CapaTeitoku capa = CapaTeitoku.getTeitokuCapability(player);
 		if (capa != null)
 		{
 			capa.setMarriageNum(capa.getMarriageNum() + 1);
 		}
-        
-        //play hearts effect
-        TargetPoint point = new TargetPoint(ship.dimension, ship.posX, ship.posY, ship.posZ, 32D);
+				
+				//play hearts effect
+				TargetPoint point = new TargetPoint(ship.dimension, ship.posX, ship.posY, ship.posZ, 32D);
 		CommonProxy.channelP.sendToAllAround(new S2CSpawnParticle(ship, 3, false), point);
-        
+				
 		//play marriage sound
 		ship.playSound(ship.getCustomSound(4, ship), ConfigHandler.volumeShip, 1F);
 		
@@ -167,50 +167,50 @@ public class InteractHelper
 		
 		//set shy emotion
 		ship.setStateEmotion(ID.S.Emotion, ID.Emotion.SHY, true);
-        
-        //add 3 random bonus point
-        for (int i = 0; i < 3; ++i)
-        {
-        	ship.getAttrs().addAttrsBonusRandom(ship.getRNG());
-        }
-        
-        //update attrs
-        ship.calcShipAttributes(31, true);
-        
-        //物品用完時要設定為null清空該slot
-        if (stack.getCount() <= 0)
-        {
-        	player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
-        }
-        
-        return true;
+				
+		//add 3 random bonus point
+		for (int i = 0; i < 3; ++i)
+		{
+			ship.getAttrs().addAttrsBonusRandom(ship.getRNG());
+		}
+		
+		//update attrs
+		ship.calcShipAttributes(31, true);
+		
+		//物品用完時要設定為null清空該slot
+		if (stack.getCount() <= 0)
+		{
+			player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
+		}
+		
+		return true;
 	}
 	
-    /** kattai hammer interact method */
+	/** kattai hammer interact method */
 	public static boolean interactKaitaiHammer(BasicEntityShip ship, EntityPlayer player, ItemStack stack)
 	{
 		//創造模式不消耗物品
-        if (!player.capabilities.isCreativeMode)
-        {
-        	//damage +1 in non-creative mode
-        	stack.setItemDamage(stack.getItemDamage() + 1);
-            
-            //set item amount
-            ItemStack[] items = ShipCalc.getKaitaiItems(ship.getShipClass());
-                        
-            EntityItem entityItem0 = new EntityItem(ship.world, ship.posX+0.5D, ship.posY+0.8D, ship.posZ+0.5D, items[0]);
-            EntityItem entityItem1 = new EntityItem(ship.world, ship.posX+0.5D, ship.posY+0.8D, ship.posZ-0.5D, items[1]);
-            EntityItem entityItem2 = new EntityItem(ship.world, ship.posX-0.5D, ship.posY+0.8D, ship.posZ+0.5D, items[2]);
-            EntityItem entityItem3 = new EntityItem(ship.world, ship.posX-0.5D, ship.posY+0.8D, ship.posZ-0.5D, items[3]);
+		if (!player.capabilities.isCreativeMode)
+		{
+			//damage +1 in non-creative mode
+			stack.setItemDamage(stack.getItemDamage() + 1);
+				
+			//set item amount
+			ItemStack[] items = ShipCalc.getKaitaiItems(ship.getShipClass());
+									
+			EntityItem entityItem0 = new EntityItem(ship.world, ship.posX+0.5D, ship.posY+0.8D, ship.posZ+0.5D, items[0]);
+			EntityItem entityItem1 = new EntityItem(ship.world, ship.posX+0.5D, ship.posY+0.8D, ship.posZ-0.5D, items[1]);
+			EntityItem entityItem2 = new EntityItem(ship.world, ship.posX-0.5D, ship.posY+0.8D, ship.posZ+0.5D, items[2]);
+			EntityItem entityItem3 = new EntityItem(ship.world, ship.posX-0.5D, ship.posY+0.8D, ship.posZ-0.5D, items[3]);
 
-            ship.world.spawnEntity(entityItem0);
-            ship.world.spawnEntity(entityItem1);
-            ship.world.spawnEntity(entityItem2);
-            ship.world.spawnEntity(entityItem3);
-            
-            //drop inventory item
-        	for (int i = 0; i < ship.getCapaShipInventory().getSlots(); i++)
-        	{
+			ship.world.spawnEntity(entityItem0);
+			ship.world.spawnEntity(entityItem1);
+			ship.world.spawnEntity(entityItem2);
+			ship.world.spawnEntity(entityItem3);
+						
+						//drop inventory item
+			for (int i = 0; i < ship.getCapaShipInventory().getSlots(); i++)
+			{
 				ItemStack invitem = ship.getCapaShipInventory().getStackInSlot(i);
 
 				if (!invitem.isEmpty())
@@ -225,7 +225,7 @@ public class InteractHelper
 						int j = ship.getRNG().nextInt(21) + 10;
 						//如果物品超過一個隨機數量, 會分更多疊噴出
 						if (j > invitem.getCount())
-						{  
+						{	
 							j = invitem.getCount();
 						}
 
@@ -244,43 +244,43 @@ public class InteractHelper
 					}
 				}
 			}
-            
-        	//kaitai sound
-        	ship.playSound(ModSounds.SHIP_KAITAI, ConfigHandler.volumeShip, getSoundPitch(ship));
-        	ship.playSound(BasicEntityShip.getCustomSound(3, ship), ConfigHandler.volumeShip, getSoundPitch(ship));
-        }
-        
-        //物品用完時要設定為null清空該slot
-        if (stack.getItemDamage() >= stack.getMaxDamage())
-        {  //物品耐久度用完時要設定為null清空該slot
-        	player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
-        }
-        
-        //show emotes
-        ship.applyParticleEmotion(8);
+						
+			//kaitai sound
+			ship.playSound(ModSounds.SHIP_KAITAI, ConfigHandler.volumeShip, getSoundPitch(ship));
+			ship.playSound(BasicEntityShip.getCustomSound(3, ship), ConfigHandler.volumeShip, getSoundPitch(ship));
+		}
+				
+		//物品用完時要設定為null清空該slot
+		if (stack.getItemDamage() >= stack.getMaxDamage())
+		{	//物品耐久度用完時要設定為null清空該slot
+			player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
+		}
+		
+		//show emotes
+		ship.applyParticleEmotion(8);
 		
 		//emotes AOE
 		EntityHelper.applyShipEmotesAOE(ship.world, ship.posX, ship.posY, ship.posZ, 10D, 6);
-         
-        ship.setDead();
-        
-        return true;
+			
+		ship.setDead();
+		
+		return true;
 	}
 	
 	/** sound pitch for ship */
-    public static float getSoundPitch(BasicEntityShip ship)
-    {
-        return (ship.getRNG().nextFloat() - ship.getRNG().nextFloat()) * 0.1F + 1F;
-    }
+	public static float getSoundPitch(BasicEntityShip ship)
+	{
+		return (ship.getRNG().nextFloat() - ship.getRNG().nextFloat()) * 0.1F + 1F;
+	}
 	
 	/** change owner method:
-	 *  1. check owner paper has 2 signs
-	 *  2. check owner is A or B
-	 *  3. get player entity
-	 *  4. change ship's player UID
-	 *  5. change ship's owner UUID
+	 *	1. check owner paper has 2 signs
+	 *	2. check owner is A or B
+	 *	3. get player entity
+	 *	4. change ship's player UID
+	 *	5. change ship's owner UUID
 	 */
-    public static boolean interactOwnerPaper(BasicEntityShip ship, EntityPlayer player, ItemStack itemstack)
+	public static boolean interactOwnerPaper(BasicEntityShip ship, EntityPlayer player, ItemStack itemstack)
 	{
 		NBTTagCompound nbt = itemstack.getTagCompound();
 		boolean changeOwner = false;
@@ -336,7 +336,7 @@ public class InteractHelper
 		{
 			//play marriage sound
 			ship.playSound(BasicEntityShip.getCustomSound(4, ship), ConfigHandler.volumeShip, 1F);
-	        
+					
 			player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
 			return true;
 		}
@@ -351,7 +351,7 @@ public class InteractHelper
 	 *  3. sometimes reject food
 	 *  4. feed max morale = 4800
 	 */
-    public static boolean interactFeed(BasicEntityShip ship, EntityPlayer player, ItemStack itemstack)
+	public static boolean interactFeed(BasicEntityShip ship, EntityPlayer player, ItemStack itemstack)
 	{
 		Item i = itemstack.getItem();
 		int meta = itemstack.getItemDamage();
@@ -371,16 +371,16 @@ public class InteractHelper
 				switch (ship.getRNG().nextInt(4))
 				{
 				case 1:
-					ship.applyParticleEmotion(2);  //panic
+					ship.applyParticleEmotion(2);	//panic
 				break;
 				case 2:
-					ship.applyParticleEmotion(32);  //hmm
+					ship.applyParticleEmotion(32);	//hmm
 				break;
 				case 3:
-					ship.applyParticleEmotion(0);  //drop
+					ship.applyParticleEmotion(0);	//drop
 				break;
 				default:
-					ship.applyParticleEmotion(11);  //??
+					ship.applyParticleEmotion(11);	//??
 				break;
 				}
 			}
@@ -480,10 +480,10 @@ public class InteractHelper
 			
 			//play sound
 			if (ship.getStateTimer(ID.T.SoundTime) <= 0)
-	    	{
+			{
 				ship.setStateTimer(ID.T.SoundTime, 20 + ship.getRNG().nextInt(20));
 				ship.playSound(BasicEntityShip.getCustomSound(7, ship), ConfigHandler.volumeShip, getSoundPitch(ship));
-	    	}
+			}
 			
 			//apply potion effect
 			List<PotionEffect> pbuffs = PotionUtils.getEffectsFromStack(itemstack);
@@ -491,25 +491,25 @@ public class InteractHelper
 			if (pbuffs.size() >0)
 			{
 				//apply buff/debuff potion
-	            for (PotionEffect pe : pbuffs)
-	            {
-	                ship.addPotionEffect(new PotionEffect(pe));
-	            }
-	            
-	            //apply instant potion
+				for (PotionEffect pe : pbuffs)
+				{
+					ship.addPotionEffect(new PotionEffect(pe));
+				}
+				
+				//apply instant potion
 				float hp1p = ship.getMaxHealth() * 0.01F;
-	            if (hp1p < 1F) hp1p = 1F;
-	            
-	            //apply heal
-	            int lvPotion = BuffHelper.checkPotionHeal(pbuffs);
+				if (hp1p < 1F) hp1p = 1F;
+				
+				//apply heal
+				int lvPotion = BuffHelper.checkPotionHeal(pbuffs);
 				if (lvPotion > 0) ship.heal((hp1p * 2F + 2F) * lvPotion);
 				
-	            //apply damage
+				//apply damage
 				lvPotion = BuffHelper.checkPotionDamage(pbuffs);
 				if (lvPotion > 0) ship.attackEntityFrom(DamageSource.MAGIC, (hp1p * 2F + 2F) * lvPotion);
-	            
+							
 				//update potion buff
-	    		ship.calcShipAttributes(8, true);
+				ship.calcShipAttributes(8, true);
 			}
 			
 			//morale++
@@ -528,13 +528,21 @@ public class InteractHelper
 			{
 				if (!player.capabilities.isCreativeMode)
 				{
-		            if (itemstack.getCount() - 1 <= 0)
-		            {
-		            	//update slot
-		            	itemstack = itemstack.getItem().getContainerItem(itemstack);
-		            	player.inventory.setInventorySlotContents(player.inventory.currentItem, itemstack);
-		            }
-		        }
+					/*
+					if (itemstack.getCount() - 1 <= 0)
+					{
+						//update slot
+
+						itemstack = itemstack.getItem().getContainerItem(itemstack);
+						player.inventory.setInventorySlotContents(player.inventory.currentItem, itemstack);
+					}*/
+					itemstack.shrink(1);
+
+					if (itemstack.getCount() <= 0)
+					{	//物品用完時要設定為null清空該slot
+						player.inventory.setInventorySlotContents(player.inventory.currentItem, ItemStack.EMPTY);
+					}
+				}
 			}
 			
 			//show eat emotion
@@ -548,7 +556,7 @@ public class InteractHelper
 					ship.applyParticleEmotion(9);  //hungry
 				break;
 				case 2:
-					ship.applyParticleEmotion(30); //pif
+					ship.applyParticleEmotion(30);  //pif
 				break;
 				default:
 					ship.applyParticleEmotion(1);  //heart

@@ -17,6 +17,7 @@ tile.shincolle:BlockLargeShipyard.name=超深海热漩
 tile.shincolle:BlockVolBlock.name=深海火山块
 tile.shincolle:BlockVolCore.name=深海火山核心
 tile.shincolle:BlockWaypoint.name=深海路径点
+tile.shincolle:BlockGrudgeXP.name=升华怨念团块
 
 # Item
 item.shincolle:AbyssMetal.name=深海金属
@@ -39,6 +40,9 @@ item.shincolle:DeskItemRadar.name=携带型深海雷达
 item.shincolle:InstantConMat.name=高速建造材料
 item.shincolle:KaitaiHammer.name=解体槌
 item.shincolle:Grudge.name=怨念
+item.shincolle:Grudge1.name=升华怨念
+item.shincolle:OPTool.name=OP工具
+item.shincolle:RecipePaper.name=合成配方
 item.shincolle:MarriageRing.name=深海栖舰结婚戒指
 item.shincolle:ModernKit.name=近代化改修工具
 item.shincolle:OwnerPaper.name=深海栖舰所有权书
@@ -67,6 +71,10 @@ item.shincolle:EquipCannon10.name=16寸三连装炮
 item.shincolle:EquipCannon11.name=15寸要塞炮
 item.shincolle:EquipCannon12.name=沿岸设置抱
 item.shincolle:EquipCannon13.name=8寸长射程连装抱
+item.shincolle:EquipCannon14.name=15寸四连装炮
+item.shincolle:EquipCannon15.name=12寸三连装炮
+item.shincolle:EquipCannon16.name=46cm三连装炮
+
 item.shincolle:EquipMachinegun.name=3寸单装高射炮
 item.shincolle:EquipMachinegun1.name=5寸单装高射炮
 item.shincolle:EquipMachinegun2.name=12.7mm机关枪
@@ -98,6 +106,7 @@ item.shincolle:EquipTorpedo2.name=22寸鱼雷后期型
 item.shincolle:EquipTorpedo3.name=深海乌贼鱼雷
 item.shincolle:EquipTorpedo4.name=高速深海鱼雷
 item.shincolle:EquipTorpedo5.name=高速深海鱼类改II
+item.shincolle:EquipTorpedo6.name=深海伏击鱼雷
 item.shincolle:EquipAirplane.name=深海栖舰攻Mk.I
 item.shincolle:EquipAirplane1.name=深海栖舰攻Mk.II
 item.shincolle:EquipAirplane2.name=深海栖舰攻Mk.III
@@ -134,6 +143,16 @@ item.shincolle:EquipCompass.name=深海指南针
 item.shincolle:EquipFlare.name=深海信号弹
 item.shincolle:EquipSearchlight.name=深海探照灯
 
+item.shincolle:EquipAmmo.name=九一式彻甲弹
+item.shincolle:EquipAmmo1.name=一式彻甲弹
+item.shincolle:EquipAmmo2.name=对空霰弹
+item.shincolle:EquipAmmo3.name=三式弹
+item.shincolle:EquipAmmo4.name=贫铀弹
+item.shincolle:EquipAmmo5.name=重力弹
+item.shincolle:EquipAmmo6.name=反重力弹
+item.shincolle:EquipAmmo7.name=附魔弹
+item.shincolle:EquipAmmo8.name=集束炸弹
+
 # Spawn Egg
 item.shincolle:smallegg.name=深海栖舰蛋（初级）
 item.shincolle:largeegg.name=深海栖舰蛋（高级）
@@ -157,8 +176,13 @@ item.shincolle:shipegg28.name=战列舰栖姬
 item.shincolle:shipegg29.name=驱逐舰姬
 item.shincolle:shipegg30.name=港湾栖姬
 item.shincolle:shipegg31.name=离岛栖姬
+item.shincolle:shipegg32.name=中间栖姬
 item.shincolle:shipegg33.name=北方栖姬
+item.shincolle:shipegg46.name=潜水栖姬
+item.shincolle:shipegg74.name=潜水新栖姬
+
 item.shincolle:shipegg35.name=空母水鬼
+item.shincolle:shipegg36.name=潜水新栖姬
 item.shincolle:shipegg38.name=驱逐舰 岛风
 item.shincolle:shipegg2038.name=驱逐舰 岛风 （Mob）
 item.shincolle:shipegg39.name=战列舰 长门
@@ -167,6 +191,7 @@ item.shincolle:shipegg40.name=潜水艇 U-511
 item.shincolle:shipegg2040.name=潜水艇 U-511 （Mob）
 item.shincolle:shipegg41.name=潜水艇 吕500
 item.shincolle:shipegg2041.name=潜水艇 吕500 （Mob）
+
 item.shincolle:shipegg48.name=战列舰 大和
 item.shincolle:shipegg2048.name=战列舰 大和 （Mob）
 item.shincolle:shipegg49.name=空母 加贺
@@ -190,6 +215,14 @@ item.shincolle:shipegg60.name=重巡 爱宕
 item.shincolle:shipegg2060.name=重巡 爱宕 （Mob）
 item.shincolle:shipegg61.name=重巡 高雄
 item.shincolle:shipegg2061.name=重巡 高雄 （Mob）
+item.shincolle:shipegg62.name=战列舰 金刚
+item.shincolle:shipegg2062.name=战列舰 金刚 （Mob）
+item.shincolle:shipegg63.name=战列舰 比睿
+item.shincolle:shipegg2063.name=战列舰 比睿 （Mob）
+item.shincolle:shipegg64.name=战列舰 榛名
+item.shincolle:shipegg2064.name=战列舰 榛名 （Mob）
+item.shincolle:shipegg65.name=战列舰 雾岛
+item.shincolle:shipegg2065.name=战列舰 雾岛 （Mob）
 
 # Entity
 entity.shincolle.EntityAirfieldHime.name=飞行场姬

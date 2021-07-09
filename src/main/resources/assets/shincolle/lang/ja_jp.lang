@@ -70,6 +70,10 @@ item.shincolle:EquipCannon10.name=16inch三連装砲
 item.shincolle:EquipCannon11.name=15inch要塞砲
 item.shincolle:EquipCannon12.name=5inch沿岸設置砲
 item.shincolle:EquipCannon13.name=8inch長射程連装砲
+item.shincolle:EquipCannon14.name=15inch四連裝砲
+item.shincolle:EquipCannon15.name=12inch三連裝砲
+item.shincolle:EquipCannon16.name=46cm三連裝砲
+
 item.shincolle:EquipMachinegun.name=3inch単装高角砲
 item.shincolle:EquipMachinegun1.name=5inch単装高射砲
 item.shincolle:EquipMachinegun2.name=12.7mm機銃

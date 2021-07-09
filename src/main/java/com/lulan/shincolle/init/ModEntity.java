@@ -185,13 +185,13 @@ public class ModEntity
 	{
 		LogHelper.debug("DEBUG: register entity: "+entityId+" "+entityClass+" "+entityName);
 		//登錄參數: 生物class, 生物名稱, 生物id, mod副本, 追蹤更新距離, 更新時間間隔, 是否發送同步封包(高速entity必須true才會顯示平順)
-		// EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, Reference.MOD_ID + ":" + entityName, entityId, ShinColle.instance, 64, 1, true);
+		// EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, Reference.MOD_ID + "." + entityName, entityId, ShinColle.instance, 64, 1, true);
 		// Will clean up later? lol
 		registry.register(
 			EntityEntryBuilder
 				.<E>create()
 				.id(new ResourceLocation(Reference.MOD_ID, entityName), entityId)
-				.name(Reference.MOD_ID + ":" + entityName)
+				.name(Reference.MOD_ID + "." + entityName)
 				.entity(entityClass)
 				.tracker(64, 1, true)
 				.build());
@@ -202,7 +202,7 @@ public class ModEntity
 	public static void createProjectileEntity(Class entityClass, String entityName, int entityId)
 	{
 		//登錄參數: 生物class, 生物名稱, 生物id, mod副本, 追蹤更新距離, 更新時間間隔, 是否發送速度封包
-		// EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, Reference.MOD_ID + ":" + entityName, entityId, ShinColle.instance, 64, 1, true);
+		// EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, Reference.MOD_ID + "." + entityName, entityId, ShinColle.instance, 64, 1, true);
 		createEntity(entityClass, entityName, entityId); // These two methods do the same thing.
 	}
 	
@@ -211,8 +211,8 @@ public class ModEntity
 	public static <E extends Entity> void createItemEntity(Class<E> entityClass, String entityName, int entityId)
 	{
 		//登錄參數: 生物class, 生物名稱, 生物id, mod副本, 追蹤更新距離, 更新時間間隔, 是否發送速度封包
-		// EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, Reference.MOD_ID + ":" + entityName, entityId, ShinColle.instance, 64, 4, false);
-		registry.register(EntityEntryBuilder.<E>create().id(new ResourceLocation(Reference.MOD_ID, entityName), entityId).name(Reference.MOD_ID + ":" + entityName).entity(entityClass).tracker(64, 4, false).build());
+		// EntityRegistry.registerModEntity(new ResourceLocation(Reference.MOD_ID, entityName), entityClass, Reference.MOD_ID + "." + entityName, entityId, ShinColle.instance, 64, 4, false);
+		registry.register(EntityEntryBuilder.<E>create().id(new ResourceLocation(Reference.MOD_ID, entityName), entityId).name(Reference.MOD_ID + "." + entityName).entity(entityClass).tracker(64, 4, false).build());
 	}
 	
 	

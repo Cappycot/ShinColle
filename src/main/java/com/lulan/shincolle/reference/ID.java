@@ -247,6 +247,7 @@ public class ID
 		public static final byte CANNON_TWIN_8 = 13;
 		public static final byte CANNON_QUAD_15 = 14;
 		public static final byte CANNON_TRI_12 = 15;
+		public static final byte CANNON_TRI_1811 = 16;
 		//torpedo
 		public static final byte TORPEDO_21MK1 = 0;
 		public static final byte TORPEDO_21MK2 = 1;
